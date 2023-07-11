@@ -51,7 +51,7 @@
             <div class="div-blogs-blog">
                 <small style="float: right">{{$blog->created_at}}</small>
                 <h1>{{$blog->titulo}}</h1>
-                <a href="{{route('blog.show',$blog)}}"><img src="{{$blog->imagen}}" style="border-radius: 1.2em; border: 1px solid #ccc;"></a>
+                <a href="{{route('blog.show',$blog)}}"><img src="../.././img/blogs/{{$blog->imagen}}" style="border-radius: 1.2em; border: 1px solid #ccc;"></a>
             </div>
             @endforeach
         </div>
