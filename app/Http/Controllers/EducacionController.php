@@ -18,7 +18,14 @@ class EducacionController extends Controller
         $skills = Skill::all();
         $persona = Persona::all()->first();
         $educacion = Educacion::all();
-        return view('educacion.educacion',compact('educacion','persona','skills'));
+        $personaDefault = new Persona;
+        $personaDefault->nombre = "undefined";
+        $personaDefault->apellido = "undefined";
+        $personaDefault->edad = 0;
+        $personaDefault->fotografia = "undefined";
+        $personaDefault->email = "undefined";
+        $personaDefault->telefono = 0;
+        return view('educacion.educacion',compact('educacion','persona','skills','personaDefault'));
     }
 
     public function create()

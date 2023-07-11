@@ -16,7 +16,14 @@ class ExperienciaController extends Controller
         // solo necesito la primera persona, que soy yo.
         $persona = Persona::all()->first();
         $experiencias = Experiencia::all();
-        return view('experiencia.experiencia', compact('experiencias','persona'));
+        $personaDefault = new Persona;
+        $personaDefault->nombre = "undefined";
+        $personaDefault->apellido = "undefined";
+        $personaDefault->edad = 0;
+        $personaDefault->fotografia = "undefined";
+        $personaDefault->email = "undefined";
+        $personaDefault->telefono = 0;
+        return view('experiencia.experiencia', compact('experiencias','persona','personaDefault'));
     }
 
 
