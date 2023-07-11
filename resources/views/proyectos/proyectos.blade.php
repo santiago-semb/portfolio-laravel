@@ -28,10 +28,6 @@
         padding: 5px;
     } 
 
-    #tr-tbody:hover {
-        background-color: black;
-        color: white;
-    }
 </style>
 
 
@@ -55,27 +51,17 @@
                 </tr>
             </thead>
             <tbody>
+                @php $i=1; @endphp
+                @foreach ($proyectos as $proyecto)
                 <tr id="tr-tbody">
-                    <td>1</td>
-                    <td>Project 1</td>
-                    <td>HTML-CSS-Javascript</td>
-                    <td>https://project-1.com</td>
-                    <td>This is the the project-1 description</td>
+                    <td>{{$i}}</td>
+                    <td>{{$proyecto->nombre}}</td>
+                    <td>{{$proyecto->lenguajes}}</td>
+                    <td><a id="link-proyecto" href="{{$proyecto->link}}" target="_blank">{{$proyecto->link}}</a></td>
+                    <td>{{$proyecto->descripcion}}</td>
+                    @php $i++; @endphp
                 </tr>
-                <tr id="tr-tbody">
-                    <td>1</td>
-                    <td>Project 1</td>
-                    <td>HTML-CSS-Javascript</td>
-                    <td>https://project-1.com</td>
-                    <td>This is the the project-1 description</td>
-                </tr>
-                <tr id="tr-tbody">
-                    <td>1</td>
-                    <td>Project 1</td>
-                    <td>HTML-CSS-Javascript</td>
-                    <td>https://project-1.com</td>
-                    <td>This is the the project-1 description</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

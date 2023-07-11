@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('experiencia', function (Blueprint $table) {
+        Schema::create('experiencias', function (Blueprint $table) {
             $table->id();
             $table->string('titulo',70);
             $table->string('lugar',50);
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('imagen',200)->nullable();
             $table->foreignId('persona_id')
             ->nullable()
-            ->references('persona_id')
+            ->references('id')
             ->on('personas')
             ->onDelete('cascade');
             $table->timestamp('created_at')->nullable();

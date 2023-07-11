@@ -38,10 +38,37 @@
         @include('info-personal-card.info-personal-card')
 
         <div class="experiencia">
-            <div id="contenedor">
-                <span><i id="img-maletin" class="fa-solid fa-briefcase"></i></span><br><br>
-                <small>Actualmente no poseo experiencia laboral :(</small>
-            </div>
+            @if(count($experiencias) > 0)
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Lugar</th>
+                            <th>Desde</th>
+                            <th>Hasta</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($experiencias as $experiencia)
+                        <tr>
+                            <td>{{$experiencia->titulo}}</td>
+                            <td>{{$experiencia->lugar}}</td>
+                            <td>{{$experiencia->desde}}</td>
+                            <td>{{$experiencia->hasta}}</td>
+                            <td>{{$experiencia->descripcion}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            @else
+                <div id="contenedor">
+                    <span><i id="img-maletin" class="fa-solid fa-briefcase"></i></span><br><br>
+                    <small>Actualmente no poseo experiencia laboral :(</small>
+                </div>
+            @endif
         </div>
 
     </div>

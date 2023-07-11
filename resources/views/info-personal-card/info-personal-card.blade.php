@@ -26,9 +26,11 @@
     }
 </style>
 
+@if($persona != null)
+
 <div class="info-personal">
     <div id="div-foto">
-        <img class="mi-foto" src="../.././img/sobre-mi/foto-santiago(1).png">
+        <img class="mi-foto" src="../.././img/sobre-mi/{{$persona->fotografia}}">
     </div>
     <div id="div-data">
         <br>
@@ -38,3 +40,18 @@
         <span><b>+{{ $persona->telefono }}</b></span><br><br>
     </div>
 </div>
+
+@else
+<div class="info-personal">
+    <div id="div-foto">
+        <img class="mi-foto" src="../.././img/sobre-mi/foto-santiago(1).png">
+    </div>
+    <div id="div-data">
+        <br>
+        <span><b style="text-transform: capitalize">{{ $personaDefault->nombre }} {{ $personaDefault->apellido }}</b></span><br><br>
+        <span><b>{{ $personaDefault->edad }} años</b></span><br><br>
+        <span><b>{{ $personaDefault->email }}</b></span><br><br>
+        <span><b>+{{ $personaDefault->telefono }}</b></span><br><br>
+    </div>
+</div>
+@endif

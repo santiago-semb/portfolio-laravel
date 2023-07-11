@@ -12,54 +12,50 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog.blog');
+        $blogs = Blog::all();
+        return view('blog.blog', compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Blog $blog)
     {
-        //
+        $blog = Blog::all()->find($blog);
+        return view('blog.ver-blog', compact('blog'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Blog $blog)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Blog $blog)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Blog $blog)
-    {
-        //
-    }
+    public function create()
+      {
+          return view('ADMIN.blogs.crear-blog');
+      }
+  
+      public function store(Request $request)
+      {
+          $blog = new Blog;
+          $blog->persona_id = 1;
+          $blog->titulo = $request->titulo;
+          $blog->imagen = $request->imagen;
+          $blog->contenido = $request->contenido;
+          $blog->save();     
+          return redirect()->route('blog.index');
+      }
+  
+      public function destroy(Blog $blog)
+      {
+          $blog->delete();
+          return redirect()->route('blog.index');
+      }
+  
+      public function edit(Blog $blog)
+      {
+          return view('ADMIN.blogs.editar-blog', compact('blog'));
+      }
+  
+      public function update(Request $request)
+      {
+          $blogUpdate = Blog::all()->find($request->id);
+          $blogUpdate->titulo = $request->titulo;
+          $blogUpdate->imagen = $request->imagen;
+          $blogUpdate->contenido = $request->contenido;
+          $blogUpdate->update();
+          return redirect()->route('blog.index');
+      }
 }

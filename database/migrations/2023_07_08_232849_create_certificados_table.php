@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('link',200);
             $table->foreignId('persona_id')
             ->nullable()
-            ->references('persona_id')
+            ->references('id')
             ->on('personas')
             ->onDelete('cascade');
             $table->timestamp('created_at')->nullable();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Educacion;
 use App\Models\Persona;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class EducacionController extends Controller
@@ -14,55 +15,48 @@ class EducacionController extends Controller
     public function index()
     {
         // solo necesito la primera persona, que soy yo.
+        $skills = Skill::all();
         $persona = Persona::all()->first();
-        return view('educacion.educacion',compact('persona'));
+        $educacion = Educacion::all();
+        return view('educacion.educacion',compact('educacion','persona','skills'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Educacion $educacion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Educacion $educacion)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Educacion $educacion)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Educacion $educacion)
-    {
-        //
-    }
+     {
+         return view('ADMIN.educacion.crear-educacion');
+     }
+ 
+     public function store(Request $request)
+     {
+         $educacion = new Educacion;
+         $educacion->persona_id = 1;
+         $educacion->institucion = $request->institucion;
+         $educacion->fecha = $request->fecha;
+         $educacion->estado = $request->estado;
+         $educacion->descripcion = $request->descripcion; 
+         $educacion->save();     
+         return redirect()->route('educacion.index');
+     }
+ 
+     public function destroy(Educacion $educacion)
+     {
+         $educacion->delete();
+         return redirect()->route('educacion.index');
+     }
+ 
+     public function edit(Educacion $educacion)
+     {
+         return view('ADMIN.educacion.editar-educacion', compact('educacion'));
+     }
+ 
+     public function update(Request $request)
+     {
+         $educacionUpdate = Educacion::all()->find($request->id);
+         $educacionUpdate->institucion = $request->institucion;
+         $educacionUpdate->fecha = $request->fecha;
+         $educacionUpdate->estado = $request->estado;
+         $educacionUpdate->descripcion = $request->descripcion;
+         $educacionUpdate->update();
+         return redirect()->route('educacion.index');
+     }
 }

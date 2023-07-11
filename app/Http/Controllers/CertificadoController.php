@@ -12,54 +12,47 @@ class CertificadoController extends Controller
      */
     public function index()
     {
-        return view('certificados.certificados');
+        /*$skills = Skill::all();
+        $persona = Persona::all()->first();
+        $educacion = Educacion::all();*/
+        $certificados = Certificado::all();
+        return view('certificados.certificados',compact('certificados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('ADMIN.certificados.crear-certificado');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $certificado = new Certificado;
+        $certificado->persona_id = 1;
+        $certificado->nombre = $request->nombre;
+        $certificado->imagen = $request->imagen;
+        $certificado->link = $request->link;
+        $certificado->save();     
+        return redirect()->route('certificado.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Certificado $certificado)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Certificado $certificado)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Certificado $certificado)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Certificado $certificado)
     {
-        //
+        $certificado->delete();
+        return redirect()->route('certificado.index');
+    }
+
+    public function edit(Certificado $certificado)
+    {
+        return view('ADMIN.certificados.editar-certificado', compact('certificado'));
+    }
+
+    public function update(Request $request)
+    {
+        $certificadoUpdate = Certificado::all()->find($request->id);
+        $certificadoUpdate->nombre = $request->nombre;
+        $certificadoUpdate->imagen = $request->imagen;
+        $certificadoUpdate->link = $request->link;
+        $certificadoUpdate->update();
+        return redirect()->route('certificado.index');
     }
 }

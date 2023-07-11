@@ -41,20 +41,19 @@
 
     <div class="contenido-principal">
         <div class="blogs">
-            <div class="div-blogs-botones-categorias">
+            <!--<div class="div-blogs-botones-categorias">
                 <button>Informática</button>
                 <button>Programación</button>
                 <button>Otra categoria</button>
-            </div>
+            </div>-->
 
+            @foreach ($blogs as $blog)
             <div class="div-blogs-blog">
-                <h1>titulo del blog</h1>
-                <img src="">
+                <small style="float: right">{{$blog->created_at}}</small>
+                <h1>{{$blog->titulo}}</h1>
+                <a href="{{route('blog.show',$blog)}}"><img src="../.././img/blogs/{{$blog->imagen}}" style="border-radius: 1.2em; border: 1px solid #ccc;"></a>
             </div>
-            <div class="div-blogs-blog">
-                <h1>titulo del blog</h1>
-                <img src="">
-            </div>
+            @endforeach
         </div>
     </div>
 

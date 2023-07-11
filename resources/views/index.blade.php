@@ -137,6 +137,13 @@
             "background-color":"#161515",
             "color":"whitesmoke"
         });
+        $("#contenido-blog").css({
+            "background-color":"rgb(3, 3, 48)",
+            "color":"whitesmoke"
+        });
+        $("#link-proyecto").css({
+            "color":"orangered",
+        });
             
         localStorage.setItem("modo", "oscuro")
     }
@@ -205,6 +212,13 @@
         $(".formulario-contacto input, .formulario-contacto textarea").css({
             "background-color":"white",
             "color":"black"
+        });
+        $("#contenido-blog").css({
+            "background-color":"#f1dec2",
+            "color":"black"
+        });
+        $("#link-proyecto").css({
+            "color":"orangered",
         });
             
         localStorage.setItem("modo", "claro")

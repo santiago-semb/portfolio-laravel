@@ -56,76 +56,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php $i=1; @endphp
+                    @foreach($educacion as $edu)
                     <tr class="tr-tbody">
-                        <td>1</td>
-                        <td>lorem</td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
+                        <td>{{$i}}</td>
+                        <td>{{$edu->descripcion}}</td>
+                        <td>{{$edu->institucion}}</td>
+                        <td>{{$edu->estado}}</td>
+                        <td>{{$edu->fecha}}</td>
+                        @php $i++; @endphp
                     </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td>lorem</td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
-                    <tr class="tr-tbody">
-                        <td></td>
-                        <td></td>
-                        <td>gfdgds</td>
-                        <td>gdfgdsgfd</td>
-                        <td>sgsdfgdsg</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

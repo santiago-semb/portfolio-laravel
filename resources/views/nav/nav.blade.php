@@ -156,18 +156,23 @@
     #title b {
         font-size: 18px;
     }
+
+    .seleccionado {
+        background-color: orange !important;
+        color: whitesmoke !important;
+    }
 </style>
 
 <div>
     <nav id="nav">
         <h1 id="title">portfolio santiago<b>v3</b></h1>
         <ul>
-            <a href="#"><li class="menu" style="border:1px solid black; color:black;"><i class="fa-solid fa-bars"></i></li></a>
 
-            <a href="{{route('inicio')}}"><li class="item-nav" id="boton-menu">Inicio</li></a>
-            <a href="{{route('proyectos')}}"><li class="item-nav" id="boton-menu">Proyectos</li></a>
-            <a href="{{route('sobre-mi')}}"><li class="item-nav" id="boton-menu">Sobre mí</li></a>
-            <a href="{{route('contacto')}}"><li class="item-nav" id="boton-menu">Contacto</li></a>
+            <a href="{{route('inicio')}}"><li class="{{request()->routeIs('inicio') ? 'seleccionado':'item-nav'}}" id="boton-menu">Inicio</li></a>
+            
+            <a href="{{route('proyectos')}}"><li class="{{request()->routeIs('proyectos') ? 'seleccionado':'item-nav'}}" id="boton-menu">Proyectos</li></a>
+            <a href="{{route('sobre-mi')}}"><li class="{{request()->routeIs('sobre-mi') ? 'seleccionado':'item-nav'}}" id="boton-menu">Sobre mí</li></a>
+            <a href="{{route('contacto')}}"><li class="{{request()->routeIs('contacto') ? 'seleccionado':'item-nav'}}" id="boton-menu">Contacto</li></a>
             <a href="#" onclick="darkMode()"><li class="modo" id="luna" style="border:1px solid black; color:black;"><i class="fa-solid fa-moon"></i></li></a>
             <a href="#" onclick="whiteMode()"><li class="modo" id="sol" style="border:1px solid black; color:black;"><i class="fa-solid fa-sun"></i></li></a>
         </ul>

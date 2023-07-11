@@ -45,20 +45,20 @@
         <h1>Bienvenido a mi página web!</h1>
         <p>Este es mi portfolio versión 3</p>
         <p>Los lenguajes y frameworks que he utilizado para este proyecto: <br>
-            <span style="color: orangered;">HTML</span>
-            <span style="color: rgb(32, 209, 209);">CSS</span>
+            <span style="color: orangered;">HTML</span> |
+            <span style="color: rgb(32, 209, 209);">CSS</span> |
             <span style="color: blue">Jquery</span> |
             <span style="color: purple">PHP</span> |
             <span style="color: orange">MySQL</span> |
             <span style="color: red">Laravel</span></p>
             <br>
             <div class="logos-tecnologias">
-                <li><img class="tecnologias" src="../.././img/logo-html.png"></li>
-                <li><img class="tecnologias" src="../.././img/logo-css.png"></li>
-                <li><img class="tecnologias" src="../.././img/logo-jquery.png"></li>
-                <li><img class="tecnologias" src="../.././img/logo-php.png"></li>
-                <li><img class="tecnologias" src="../.././img/logo-mysql.png"></li>
-                <li><img class="tecnologias" src="../.././img/laravel-logo.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/logo-html.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/logo-css.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/logo-jquery.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/logo-php.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/logo-mysql.png"></li>
+                <li><img class="tecnologias" src="../.././img/logos/laravel-logo.png"></li>
             </div>
     </div>
 

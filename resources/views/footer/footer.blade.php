@@ -59,19 +59,19 @@
     <img class="bandera" id="bandera-arg" src="../.././img/bandera-argentina.png">
     <img class="bandera" id="bandera-cba" src="../.././img/bandera-cordoba.png">
     <p class="info"><b>Correo Electrónico</b></p>
-    <p>exampleuser@gmail.com</p>
+    <p>santiagosembini2@hotmail.com</p>
     <hr style="color:whitesmoke">
     <p class="info"><b>Teléfono Móvil</b></p>
-    <p>+9999999999</p>
+    <p>+3516114898</p>
     <hr style="color:whitesmoke">
     </div>
     <div id="content-images">
-        <a href="#"><img class="red-social" id="instagram" src="../.././img/logo-instagram.png"></a>
-        <a href="#"><img class="red-social" id="github" src="../.././img/logo-github.png"></a>
-        <a href="#"><img class="red-social" id="linkedin" src="../.././img/logo-linkedin.png"></a>
-        <a href="#"><img class="tech" src="../.././img/logo-php.png"></a>
-        <a href="#"><img class="tech" src="../.././img/logo-mysql.png"></a>
-        <a href="#"><img class="tech" style="width: 40px; margin-left:20px;" src="../.././img/laravel-logo.png"></a>
-        <a href="#"><img class="tech" style="height: 42px" src="../.././img/logo-jquery.png"></a>
+        <a href="https://www.instagram.com/santiago.sembini" target="_blank"><img class="red-social" id="instagram" src="../.././img/logos/logo-instagram.png"></a>
+        <a href="https://github.com/santiago-semb" target="_blank"><img class="red-social" id="github" src="../.././img/logos/logo-github.png"></a>
+        <a href="https://www.linkedin.com/in/santiago-sembini-0abb57262" target="_blank"><img class="red-social" id="linkedin" src="../.././img/logos/logo-linkedin.png"></a>
+        <a href="#"><img class="tech" src="../.././img/logos/logo-php.png"></a>
+        <a href="#"><img class="tech" src="../.././img/logos/logo-mysql.png"></a>
+        <a href="#"><img class="tech" style="width: 40px; margin-left:20px;" src="../.././img/logos/laravel-logo.png"></a>
+        <a href="#"><img class="tech" style="height: 42px" src="../.././img/logos/logo-jquery.png"></a>
     </div>
 </footer>

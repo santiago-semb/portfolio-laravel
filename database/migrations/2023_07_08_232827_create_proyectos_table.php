@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('proyectos', function (Blueprint $table) {
-            $table->id('proyecto_id');
+            $table->id('id');
             $table->string('nombre',50);
             $table->string('lenguajes',200);
             $table->string('link',300);
             $table->string('descripcion',200)->nullable();
             $table->foreignId('persona_id')
             ->nullable()
-            ->references('persona_id')
+            ->references('id')
             ->on('personas')
             ->onDelete('cascade');
             $table->timestamps();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            //$table->timestamp('created_at')->nullable();
+            //$table->timestamp('updated_at')->nullable();
         });
     }
 

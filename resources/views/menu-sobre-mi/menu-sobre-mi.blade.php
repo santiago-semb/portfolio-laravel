@@ -21,13 +21,18 @@
         background-color: orange;
         color: whitesmoke;
     }
+
+    .seleccionado {
+        background-color: orange !important;
+        color: whitesmoke !important;
+    }
 </style>
 
 <nav id="menu-desplegable">
     <ul>
-        <a href="./educacion"><li class="item-nav" id="item-menu-desplegable">Educación</li></a>
-        <a href="./experiencia"><li class="item-nav" id="item-menu-desplegable">Experiencia</li></a>
-        <a href="./blog"><li class="item-nav" id="item-menu-desplegable">Blog</li></a>
-        <a href="{{route('certificados')}}"><li class="item-nav" id="item-menu-desplegable">Certificados</li></a>
+        <a href="{{route('educacion')}}"><li class="{{request()->routeIs('educacion') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Educación</li></a>
+        <a href="{{route('experiencia')}}"><li class="{{request()->routeIs('experiencia') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Experiencia</li></a>
+        <a href="{{route('blog')}}"><li class="{{request()->routeIs('blog') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Blog</li></a>
+        <a href="{{route('certificados')}}"><li class="{{request()->routeIs('certificados') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Certificados</li></a>
     </ul>
 </nav>

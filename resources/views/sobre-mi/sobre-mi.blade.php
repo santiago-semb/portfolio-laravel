@@ -56,11 +56,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="../.././img/logo-php.png" class="logos"></td>
-                        <td><img src="../.././img/logo-html.png" class="logos"></td>
-                        <td><img class="logos"></td>
-                        <td></td>
-                        <td><img class="logos"></td>
+                        @foreach ($skills as $skill)
+                            
+                        @if($skill->categoria == "backend")
+                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                        @endif
+                        @if($skill->categoria == "frontend")
+                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                        @endif
+                        @if($skill->categoria == "database")
+                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                        @endif
+                        @if($skill->categoria == "devops")
+                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                        @endif
+                        @if($skill->categoria == "tool")
+                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                        @endif
+                        @endforeach
                     </tr>
                 </tbody>
             </table>

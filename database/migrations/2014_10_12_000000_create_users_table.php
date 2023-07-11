@@ -17,11 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('total_compras')->nullable();
-            $table->timestamp('ultima_compra')->nullable();
-            $table->timestamp('ultimo_acceso')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 

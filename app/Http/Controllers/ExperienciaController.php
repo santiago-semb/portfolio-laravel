@@ -15,54 +15,52 @@ class ExperienciaController extends Controller
     {
         // solo necesito la primera persona, que soy yo.
         $persona = Persona::all()->first();
-        return view('experiencia.experiencia', compact('persona'));
+        $experiencias = Experiencia::all();
+        return view('experiencia.experiencia', compact('experiencias','persona'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Experiencia $experiencia)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Experiencia $experiencia)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Experiencia $experiencia)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Experiencia $experiencia)
-    {
-        //
-    }
+      {
+          return view('ADMIN.experiencias.crear-experiencia');
+      }
+  
+      public function store(Request $request)
+      {
+          $experiencia = new Experiencia;
+          $experiencia->persona_id = 1;
+          $experiencia->titulo = $request->titulo;
+          $experiencia->lugar = $request->lugar;
+          $experiencia->desde = $request->desde;
+          $experiencia->hasta = $request->hasta; 
+          $experiencia->descripcion = $request->descripcion; 
+          $experiencia->imagen = $request->imagen; 
+          $experiencia->save();     
+          return redirect()->route('experiencia.index');
+      }
+  
+      public function destroy(Experiencia $experiencia)
+      {
+          $experiencia->delete();
+          return redirect()->route('experiencia.index');
+      }
+  
+      public function edit(Experiencia $experiencia)
+      {
+          return view('ADMIN.experiencias.editar-experiencia', compact('experiencia'));
+      }
+  
+      public function update(Request $request)
+      {
+          $experienciaUpdate = Experiencia::all()->find($request->id);
+          $experienciaUpdate->titulo = $request->nombre;
+          $experienciaUpdate->lugar = $request->lenguajes;
+          $experienciaUpdate->desde = $request->link;
+          $experienciaUpdate->hasta = $request->descripcion;
+          $experienciaUpdate->descripcion = $request->descripcion;
+          $experienciaUpdate->imagen = $request->imagen;
+          $experienciaUpdate->update();
+          return redirect()->route('experiencia.index');
+      }
+  
 }

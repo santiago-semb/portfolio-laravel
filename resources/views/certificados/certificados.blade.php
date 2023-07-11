@@ -64,11 +64,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($certificados as $certificado)
                     <tr>
-                        <td><img src="../.././img/certificados/certificado_yo_programo_Arg_programa.png" id="img-certificado"></td>
-                        <td id="tbody-td-nombre-certificado">Argentina Programa #YoProgramo</td>
-                        <td><button type="submit" id="boton-ver-certificado">Ver</button></td>
+                        <td><img src="../.././img/certificados/{{$certificado->imagen}}" id="img-certificado"></td>
+                        <td id="tbody-td-nombre-certificado">{{$certificado->nombre}}</td>
+                        <td><a href="{{$certificado->link}}" target="_blank"><button type="submit" id="boton-ver-certificado">Ver</button></a></td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
