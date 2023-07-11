@@ -59,19 +59,19 @@
                         @foreach ($skills as $skill)
                             
                         @if($skill->categoria == "backend")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                            <td><img src="{{$skill->imagen}}" class="logos"></td>
                         @endif
                         @if($skill->categoria == "frontend")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                            <td><img src="{{$skill->imagen}}" class="logos"></td>
                         @endif
                         @if($skill->categoria == "database")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                            <td><img src="{{$skill->imagen}}" class="logos"></td>
                         @endif
                         @if($skill->categoria == "devops")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                            <td><img src="{{$skill->imagen}}" class="logos"></td>
                         @endif
                         @if($skill->categoria == "tool")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos"></td>
+                            <td><img src="{{$skill->imagen}}" class="logos"></td>
                         @endif
                         @endforeach
                     </tr>

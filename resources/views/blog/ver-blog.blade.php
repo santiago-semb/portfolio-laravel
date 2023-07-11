@@ -30,7 +30,7 @@
     <div class="contenido-principal">
         
         <h2 id="h2-blog">{{$blog->titulo}}</h2>
-        <img src="../.././img/blogs/{{$blog->imagen}}" class="imagen-blog">
+        <img src="{{$blog->imagen}}" class="imagen-blog">
         <small style="float: right">{{$blog->created_at}}</small>
         <div id="contenido-blog">
             <b id="b-contenido-blog">{{$blog->contenido}}</b>

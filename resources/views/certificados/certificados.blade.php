@@ -66,7 +66,7 @@
                 <tbody>
                     @foreach ($certificados as $certificado)
                     <tr>
-                        <td><img src="../.././img/certificados/{{$certificado->imagen}}" id="img-certificado"></td>
+                        <td><img src="{{$certificado->imagen}}" id="img-certificado"></td>
                         <td id="tbody-td-nombre-certificado">{{$certificado->nombre}}</td>
                         <td><a href="{{$certificado->link}}" target="_blank"><button type="submit" id="boton-ver-certificado">Ver</button></a></td>
                     </tr>
