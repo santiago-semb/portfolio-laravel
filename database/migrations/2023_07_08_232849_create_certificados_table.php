@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('certificados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',50);
-            $table->text('imagen');
+            $table->mediumText('imagen');
             $table->string('link',200);
             $table->foreignId('persona_id')
             ->nullable()
