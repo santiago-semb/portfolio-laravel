@@ -28,6 +28,9 @@
         padding: 5px;
     } 
 
+    #link-proyecto {
+        color: orangered;
+    }
 </style>
 
 

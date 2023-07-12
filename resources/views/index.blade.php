@@ -141,9 +141,6 @@
             "background-color":"rgb(3, 3, 48)",
             "color":"whitesmoke"
         });
-        $("#link-proyecto").css({
-            "color":"orangered",
-        });
             
         localStorage.setItem("modo", "oscuro")
     }
@@ -216,9 +213,6 @@
         $("#contenido-blog").css({
             "background-color":"#f1dec2",
             "color":"black"
-        });
-        $("#link-proyecto").css({
-            "color":"orangered",
         });
             
         localStorage.setItem("modo", "claro")
