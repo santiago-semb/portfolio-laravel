@@ -56,7 +56,7 @@
                 <tr id="tr-tbody">
                     <td>{{$i}}</td>
                     <td>{{$proyecto->nombre}}</td>
-                    <td>{{$proyecto->lenguajes}}</td>
+                    <td><mark style="padding: 2px; background-color: black; color:whitesmoke; border-radius:0.2em;">{{$proyecto->lenguajes}}</mark></td>
                     <td><a id="link-proyecto" href="{{$proyecto->link}}" target="_blank">{{$proyecto->link}}</a></td>
                     <td>{{$proyecto->descripcion}}</td>
                     @php $i++; @endphp
