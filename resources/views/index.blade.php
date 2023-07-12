@@ -278,5 +278,4 @@
     }
     while (document.getElementById(`php-elephant${contador}`))
 </script>
-
 </html>

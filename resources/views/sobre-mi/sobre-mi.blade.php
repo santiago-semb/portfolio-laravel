@@ -34,7 +34,6 @@
     }
 </style>
 
-
 @extends('index')
 @section('title', 'Sobre mí')
 @section('content')
@@ -47,39 +46,53 @@
             <table class="tabla-sobre-mi">
                 <thead>
                     <tr>
-                        <th>Backend</th>
-                        <th>Frontend</th>
-                        <th>Database</th>
-                        <th>DevOps</th>
-                        <th>Herramientas</th>
+                        <th id="backend">Backend</th>
+                        <th id="frontend">Frontend</th>
+                        <th id="database">Database</th>
+                        <th id="devops">DevOps</th>
+                        <th id="tools">Herramientas</th>         
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         @foreach ($skills as $skill)
-                            
-                        @if($skill->categoria == "backend")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}"></td>
-                        @endif
-                        @if($skill->categoria == "frontend")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}"></td>
-                        @endif
-                        @if($skill->categoria == "database")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}"></td>
-                        @endif
-                        @if($skill->categoria == "devops")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}"></td>
-                        @endif
-                        @if($skill->categoria == "tool")
-                            <td><img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}"></td>
-                        @endif
+
+                            @if($skill->categoria === "backend")
+                            <td id="td-backend">
+                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
+                            </td>
+                            @endif
+
+                            @if($skill->categoria === "frontend")
+                            <td id="td-frontend">
+                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
+                            </td>
+                            @endif
+
+                            @if($skill->categoria === "database")
+                            <td id="td-database">
+                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">  
+                            </td>
+                            @endif
+
+                            @if($skill->categoria === "devops")
+                            <td id="td-devops">         
+                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
+                            </td>
+                            @endif
+
+                            @if($skill->categoria === "tools")
+                            <td id="td-tools">
+                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
+                            </td>
+                            @endif
+
                         @endforeach
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
 </div>
-    
+
 @endsection
