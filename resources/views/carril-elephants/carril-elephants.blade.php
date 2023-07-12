@@ -76,7 +76,7 @@
     #php-elephant7 {
         position: absolute;
         width: 90px;
-        margin-left: 1200px;
+        margin-left: 300px;
         transition: 500ms all;
         filter: saturate(100%);
         animation-name: elephant7;

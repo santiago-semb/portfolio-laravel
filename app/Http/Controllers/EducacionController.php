@@ -14,8 +14,13 @@ class EducacionController extends Controller
      */
     public function index()
     {
-        // solo necesito la primera persona, que soy yo.
-        $skills = Skill::all();
+        // primeros 5
+        $skills5 = Skill::select("*")->offset(0)->limit(5)->get();
+        // otros 5
+        $skills10 = Skill::select("*")->offset(5)->limit(10)->get();
+        // otros 5
+        $skills15 = Skill::select("*")->offset(10)->limit(15)->get();
+
         $persona = Persona::all()->first();
         $educacion = Educacion::all();
         $personaDefault = new Persona;
@@ -25,7 +30,7 @@ class EducacionController extends Controller
         $personaDefault->fotografia = "undefined";
         $personaDefault->email = "undefined";
         $personaDefault->telefono = 0;
-        return view('educacion.educacion',compact('educacion','persona','skills','personaDefault'));
+        return view('educacion.educacion',compact('educacion','persona','skills5','skills10','skills15','personaDefault'));
     }
 
     public function create()

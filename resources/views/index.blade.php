@@ -123,11 +123,11 @@
         $(".logos").css({
             "background-color":"whitesmoke",
         });
-        $(".educacion table").css({
+        $(".educacion table, .experiencia table").css({
             "background-color":"#070822",
             "color":"whitesmoke"
         });
-        $(".educacion table th").css({
+        $(".educacion table th, .experiencia table th").css({
             "border":"1px solid whitesmoke"
         });
         $(".experiencia").css({

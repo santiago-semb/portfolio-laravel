@@ -1,9 +1,7 @@
 <style>
     .experiencia {
         display: block;
-        overflow:auto;
         color: black;
-        width: 73%;
         height: 460px;
         border-radius: 0.2em;
         text-align: center;
@@ -22,6 +20,38 @@
         margin: 0 auto;
         border-radius: 1em;
     }
+
+    .experiencia table {
+        display: block;
+        overflow:auto;
+        color: #31355b;
+        width: 73%;
+        max-height: 485px;
+        border-radius: 0.2em;
+        text-align: center;
+        margin-top: 20px;
+        background-color: whitesmoke;
+    }
+
+    .experiencia table th {
+        padding-left: 55.6px;
+        padding-right: 55.6px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 0.2em;
+        text-transform: uppercase;
+    }
+    
+    .experiencia table td {
+        padding: 7px;
+        border-radius: 0.2em;
+    }
+
+    .tr-tbody:hover {
+        background-color: #ccc;
+        color: black;
+    }
+
 </style>
 
 
@@ -42,7 +72,7 @@
 
                 <table>
                     <thead>
-                        <tr>
+                        <tr class="tr-thead">
                             <th>Título</th>
                             <th>Lugar</th>
                             <th>Desde</th>
@@ -52,7 +82,7 @@
                     </thead>
                     <tbody>
                         @foreach($experiencias as $experiencia)
-                        <tr>
+                        <tr class="tr-tbody">
                             <td>{{$experiencia->titulo}}</td>
                             <td>{{$experiencia->lugar}}</td>
                             <td>{{$experiencia->desde}}</td>
