@@ -14,8 +14,13 @@ class SkillController extends Controller
      */
     public function index()
     {
-       
-        return view('ADMIN.sobre-mi.skills.index');
+       // primeros 5
+       $skills5 = Skill::select("*")->offset(0)->limit(5)->get();
+       // otros 5
+       $skills10 = Skill::select("*")->offset(5)->limit(10)->get();
+       // otros 5
+       $skills15 = Skill::select("*")->offset(10)->limit(15)->get();
+        return view('ADMIN.sobre-mi.skills.index', compact('skills5','skills10','skills15'));
     }
 
     public function create()
