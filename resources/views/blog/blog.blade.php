@@ -29,6 +29,10 @@
         height: 400px;
         border-radius: 0.2em;
     }
+
+    #p-noblogs {
+        font-size: 30px;
+    }
 </style>
 
 
@@ -46,6 +50,10 @@
                 <button>Programación</button>
                 <button>Otra categoria</button>
             </div>-->
+
+            @if(count($blogs) == 0)
+                <p id="p-noblogs">Aún no se han subido blogs :(</p>
+            @endif
 
             @foreach ($blogs as $blog)
             <div class="div-blogs-blog">
