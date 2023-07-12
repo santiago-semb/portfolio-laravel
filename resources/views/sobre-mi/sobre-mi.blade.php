@@ -29,6 +29,11 @@
         transition: 200ms all;
     }
 
+    .nada {
+        width: 120px;
+        height: 100px;
+    }
+
     .logos:hover {
         -webkit-transform:scale(1.05);transform:scale(1.05);
     }
@@ -54,41 +59,134 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        @foreach ($skills as $skill)
+                <tr>
+                        @for ($i=0;$i<5;$i++)
 
-                            @if($skill->categoria === "backend")
+                        @if($skills5[$i]->categoria === "backend")
                             <td id="td-backend">
-                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
+                                <img src="../.././img/logos/logo-{{$skills5[$i]->nombre}}.png" class="logos" alt="{{$skills5[$i]->nombre}}">
                             </td>
-                            @endif
+                            @elseif($skills5[$i]->categoria === "nada")
+                            <td></td>
 
-                            @if($skill->categoria === "frontend")
-                            <td id="td-frontend">
-                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
-                            </td>
-                            @endif
+                        @elseif($skills5[$i]->categoria === "frontend")
+                           <td id="td-frontend">
+                               <img src="../.././img/logos/logo-{{$skills5[$i]->nombre}}.png" class="logos" alt="{{$skills5[$i]->nombre}}">
+                           </td>
+                           @elseif($skills5[$i]->categoria === "nada")
+                           <td></td>
 
-                            @if($skill->categoria === "database")
-                            <td id="td-database">
-                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">  
-                            </td>
-                            @endif
+                        @elseif($skills5[$i]->categoria === "database")
+                           <td id="td-database">
+                               <img src="../.././img/logos/logo-{{$skills5[$i]->nombre}}.png" class="logos" alt="{{$skills5[$i]->nombre}}">
+                           </td>
+                           @elseif($skills5[$i]->categoria === "nada")
+                           <td></td>  
 
-                            @if($skill->categoria === "devops")
-                            <td id="td-devops">         
-                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
-                            </td>
-                            @endif
+                        @elseif($skills5[$i]->categoria === "devops")
+                           <td id="td-devops">
+                               <img src="../.././img/logos/logo-{{$skills5[$i]->nombre}}.png" class="logos" alt="{{$skills5[$i]->nombre}}">
+                           </td>
+                           @elseif($skills5[$i]->categoria === "nada")
+                           <td></td>
 
-                            @if($skill->categoria === "tools")
-                            <td id="td-tools">
-                                <img src="../.././img/logos/logo-{{$skill->nombre}}.png" class="logos" alt="{{$skill->nombre}}">
-                            </td>
-                            @endif
+                        @elseif($skills5[$i]->categoria === "tools")
+                           <td id="td-tools">
+                               <img src="../.././img/logos/logo-{{$skills5[$i]->nombre}}.png" class="logos" alt="{{$skills5[$i]->nombre}}">
+                           </td>
+                           @elseif($skills5[$i]->categoria === "nada")
+                        <td></td>
+                        @endif  
 
-                        @endforeach
-                    </tr>
+                   @endfor
+                </tr>
+                <tr>
+                    @for ($i=0;$i<5;$i++)
+
+                    @if($skills10[$i]->categoria === "backend")
+                        <td id="td-backend">
+                            <img src="../.././img/logos/logo-{{$skills10[$i]->nombre}}.png" class="logos" alt="{{$skills10[$i]->nombre}}">
+                        </td>
+                        @elseif($skills10[$i]->categoria === "nada")
+                        <td></td>
+            
+
+                    @elseif($skills10[$i]->categoria === "frontend")
+                       <td id="td-frontend">
+                           <img src="../.././img/logos/logo-{{$skills10[$i]->nombre}}.png" class="logos" alt="{{$skills10[$i]->nombre}}">
+                       </td>
+                       @elseif($skills10[$i]->categoria === "nada")
+                        <td></td>
+                 
+
+                    @elseif($skills10[$i]->categoria === "database")
+                       <td id="td-database">
+                           <img src="../.././img/logos/logo-{{$skills10[$i]->nombre}}.png" class="logos" alt="{{$skills10[$i]->nombre}}">
+                       </td>
+                       @elseif($skills10[$i]->categoria === "nada")
+                        <td></td>
+              
+
+                    @elseif($skills10[$i]->categoria === "devops")
+                       <td id="td-devops">
+                           <img src="../.././img/logos/logo-{{$skills10[$i]->nombre}}.png" class="logos" alt="{{$skills10[$i]->nombre}}">
+                       </td>
+                       @elseif($skills10[$i]->categoria === "nada")
+                        <td></td>
+         
+
+                    @elseif($skills10[$i]->categoria === "tools")
+                       <td id="td-tools">
+                           <img src="../.././img/logos/logo-{{$skills10[$i]->nombre}}.png" class="logos" alt="{{$skills10[$i]->nombre}}">
+                       </td>
+                       @elseif($skills10[$i]->categoria === "nada")
+                        <td></td>
+   
+                       @endif
+               @endfor
+            </tr>
+
+            <tr>
+                @for ($i=0;$i<5;$i++)
+
+                @if($skills15[$i]->categoria === "backend")
+                    <td id="td-backend">
+                        <img src="../.././img/logos/logo-{{$skills15[$i]->nombre}}.png" class="logos" alt="{{$skills15[$i]->nombre}}">
+                    </td>
+                    @elseif($skills15[$i]->categoria === "nada")
+                    <td></td>
+                @elseif($skills15[$i]->categoria === "frontend")
+                   <td id="td-frontend">
+                       <img src="../.././img/logos/logo-{{$skills15[$i]->nombre}}.png" class="logos" alt="{{$skills15[$i]->nombre}}">
+                   </td>
+                   @elseif($skills15[$i]->categoria === "nada")
+                   <td></td>
+
+                @elseif($skills15[$i]->categoria === "database")
+                   <td id="td-database">
+                       <img src="../.././img/logos/logo-{{$skills15[$i]->nombre}}.png" class="logos" alt="{{$skills15[$i]->nombre}}">
+                   </td>
+                   @elseif($skills15[$i]->categoria === "nada")
+                   <td></td> 
+
+                @elseif($skills15[$i]->categoria === "devops")
+                   <td id="td-devops">
+                       <img src="../.././img/logos/logo-{{$skills15[$i]->nombre}}.png" class="logos" alt="{{$skills15[$i]->nombre}}">
+                   </td>
+                   @elseif($skills15[$i]->categoria === "nada")
+                   <td></td>
+
+                @elseif($skills15[$i]->categoria === "tools")
+                   <td id="td-tools">
+                       <img src="../.././img/logos/logo-{{$skills15[$i]->nombre}}.png" class="logos" alt="{{$skills15[$i]->nombre}}">
+                   </td>
+                   @elseif($skills15[$i]->categoria === "nada")
+                        <td></td>
+                @endif  
+
+           @endfor
+        </tr>
+     
                 </tbody>
             </table>
         </div>

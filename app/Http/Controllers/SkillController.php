@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SkillFormRequest;
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SkillController extends Controller
 {
@@ -13,8 +14,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        $skills = Skill::all();
-        return view('ADMIN.sobre-mi.skills.index', compact('skills'));
+       
+        return view('ADMIN.sobre-mi.skills.index');
     }
 
     public function create()

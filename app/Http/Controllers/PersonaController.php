@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Persona;
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PersonaController extends Controller
 {
@@ -23,8 +24,13 @@ class PersonaController extends Controller
         $personaDefault->email = "undefined";
         $personaDefault->telefono = 0;
 
-        $skills = Skill::all();
-        return view('sobre-mi.sobre-mi', compact('persona','personaDefault','skills'));
+        // primeros 5
+        $skills5 = Skill::select("*")->offset(0)->limit(5)->get();
+        // otros 5
+        $skills10 = Skill::select("*")->offset(5)->limit(10)->get();
+        // otros 5
+        $skills15 = Skill::select("*")->offset(10)->limit(15)->get();
+        return view('sobre-mi.sobre-mi', compact('persona','personaDefault','skills5','skills10','skills15'));
     }
 
     public function create()
