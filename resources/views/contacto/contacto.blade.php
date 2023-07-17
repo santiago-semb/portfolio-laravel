@@ -83,20 +83,40 @@
 
     <div class="contenido-principal">
         <h1 id="title-contacto">Contáctame</h1>
-        <form action="" class="formulario-contacto">
+        <form action="{{route('contacto.enviarMensaje')}}" method="POST" class="formulario-contacto">
+            @csrf
             <div id="separador-form">
-                <label for="nombreEmisor">Nombre</label><br>
-                <input type="text">
+                <label for="nombreEmisor">Nombre</label>
+                @error('nombreEmisor')
+                    <small style="color: red">*{{ $message }}</small>
+                @enderror
+                <br>
+                <input type="text" name="nombreEmisor">
             </div>
+
+
             <div id="separador-form">
-                <label for="correoElectronicoEmisor">Correo electrónico</label><br>
-                <input type="email">
+                <label for="correoElectronicoEmisor">Correo electrónico</label>
+                @error('emailEmisor')
+                    <small style="color: red">*{{ $message }}</small>
+                @enderror
+                <br>
+                <input type="email" name="emailEmisor">
             </div>
+            
             <div id="separador-form">
-                <label for="mensajeEmisor">Mensaje</label><br>
-               <textarea></textarea>
+                <label for="mensajeEmisor">Mensaje</label>
+                @error('mensajeEmisor')
+                    <small style="color: red">*{{ $message }}</small>
+                @enderror
+                <br>
+               <textarea name="mensajeEmisor"></textarea>
             </div>
+
             <button type="submit" class="boton-enviar">Enviar</button>
+            @if(session('info'))
+                <small style="color: green">{{session('info')}}</small>
+            @endif
         </form>
     </div>
 

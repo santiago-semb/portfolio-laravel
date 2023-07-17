@@ -13,6 +13,8 @@ use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\ProyectoController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
+use App\Mail\ContactoMailable;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function() {
     return redirect()->route('inicio');
@@ -79,6 +81,7 @@ Route::controller(BlogController::class)->group(function() {
 
 Route::controller(ContactoController::class)->group(function() {
     Route::get('/contacto', 'index')->name('contacto');
+    Route::post('/enviar-mensaje-contacto', 'store')->name('contacto.enviarMensaje');
 });
 
 Route::controller(SkillController::class)->group(function() {
