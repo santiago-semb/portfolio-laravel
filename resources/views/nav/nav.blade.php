@@ -161,6 +161,134 @@
         background-color: orange !important;
         color: whitesmoke !important;
     }
+
+    @media (max-width: 1024px) {
+        #title { 
+            width: 35%;
+            font-size: 35px;
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 980px) {
+        #nav li {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        #nav {
+           
+        }
+
+        #luna, #sol {
+            visibility: hidden
+        }
+
+        #title { 
+            width: 25%;
+            font-size: 25px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width:900px) {
+        #title { 
+            width: 35%;
+            font-size: 25px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width:760px) {
+        #nav {
+            width: 100%;
+        }
+
+        #nav li {
+            position: absolute;
+        }
+
+        .inicio {
+            margin-left: -220px
+        }
+
+        .proyectos {
+            margin-left: 70px
+        }
+
+        .sobre-mi {
+            margin-left: 105px
+        }
+
+        .contacto {
+            margin-left: 95px
+        }
+    }
+
+    @media (max-width:644px) {
+        #nav {
+            width: 100%;
+        }
+
+        #nav ul {
+            position: absolute;
+            margin-top: 90px;
+        }
+
+        #nav li {    
+        }
+
+        #title {
+            width: 92.5%;
+            margin-top: 0;
+            font-size: 45px;
+            height: 78px;
+            line-height: 80px
+        }
+    }
+
+    @media (max-width:558px) {
+        #nav ul {
+            margin-left: 0px;
+            width: 90%;
+        }
+        #nav li {
+            float: left
+        }
+    }
+
+    @media (max-width:546px) {
+        #nav ul {
+            margin-left: 0px;
+            width: 90%;
+        }
+        #nav li {
+            margin-left: 50px;
+        }
+    }
+
+    @media (max-width:450px) {
+        #nav ul {
+            margin-left: 0px;
+            width: 90%;
+        }
+        #nav li {
+            margin-left: 100px;
+        }
+    }
+
+    @media (max-width:421px) {
+        #title{
+            visibility: hidden;
+            position: absolute;
+        }
+
+        #nav ul {
+            position: relative;
+            width: 91%;
+            overflow: auto;
+        }
+    }
 </style>
 
 <div>
@@ -168,11 +296,11 @@
         <h1 id="title">portfolio santiago<b>v3</b></h1>
         <ul>
 
-            <a href="{{route('inicio')}}"><li class="{{request()->routeIs('inicio') ? 'seleccionado':'item-nav'}}" id="boton-menu">Inicio</li></a>
+            <a href="{{route('inicio')}}" class="inicio"><li class="{{request()->routeIs('inicio') ? 'seleccionado':'item-nav'}}" id="boton-menu">Inicio</li></a>
             
-            <a href="{{route('proyectos')}}"><li class="{{request()->routeIs('proyectos') ? 'seleccionado':'item-nav'}}" id="boton-menu">Proyectos</li></a>
-            <a href="{{route('sobre-mi')}}"><li class="{{request()->routeIs('sobre-mi') ? 'seleccionado':'item-nav'}}" id="boton-menu">Sobre mí</li></a>
-            <a href="{{route('contacto')}}"><li class="{{request()->routeIs('contacto') ? 'seleccionado':'item-nav'}}" id="boton-menu">Contacto</li></a>
+            <a href="{{route('proyectos')}}" class="proyectos"><li class="{{request()->routeIs('proyectos') ? 'seleccionado':'item-nav'}}" id="boton-menu">Proyectos</li></a>
+            <a href="{{route('sobre-mi')}}" class="sobre-mi"><li class="{{request()->routeIs('sobre-mi') ? 'seleccionado':'item-nav'}}" id="boton-menu">Sobre mí</li></a>
+            <a href="{{route('contacto')}}" class="contacto"><li class="{{request()->routeIs('contacto') ? 'seleccionado':'item-nav'}}" id="boton-menu">Contacto</li></a>
             <a href="#" onclick="darkMode()"><li class="modo" id="luna" style="border:1px solid black; color:black;"><i class="fa-solid fa-moon"></i></li></a>
             <a href="#" onclick="whiteMode()"><li class="modo" id="sol" style="border:1px solid black; color:black;"><i class="fa-solid fa-sun"></i></li></a>
         </ul>

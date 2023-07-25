@@ -1,5 +1,4 @@
 <style>
-    
     #php-elephant1 {
         position: absolute;
         width: 90px;
@@ -165,6 +164,17 @@
             transform: rotate(360deg);
             filter: saturate(1500%);
             width: 0px;
+        }
+    }
+
+        
+    @media (max-width:1200px) {
+        #php-elephant1, #php-elephant2, #php-elephant3, #php-elephant4, #php-elephant5, #php-elephant6, #php-elephant7, #php-elephant8
+        {
+            width: 0px;
+        }
+        #contador {
+            visibility: hidden;
         }
     }
 </style>

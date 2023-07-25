@@ -52,6 +52,12 @@
         background: whitesmoke;
     }
 
+    @media (max-width: 439px){
+        .tech {
+            width: 0px;
+        }
+    }
+
 </style>
 
 <footer class="footer">

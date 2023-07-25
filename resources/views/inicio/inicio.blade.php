@@ -41,7 +41,7 @@
 
 <div id="contenido-inicio">
 
-    <div class="contenido-principal">
+    <div class="contenido-principal" style="overflow: auto">
         <h1>Bienvenido a mi página web!</h1>
         <p>Este es mi portfolio versión 3</p>
         <p>Los lenguajes y frameworks que he utilizado para este proyecto: <br>

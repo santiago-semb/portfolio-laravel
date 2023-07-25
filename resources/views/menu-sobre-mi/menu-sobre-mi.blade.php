@@ -28,7 +28,7 @@
     }
 </style>
 
-<nav id="menu-desplegable">
+<nav id="menu-desplegable" style="overflow: auto">
     <ul>
         <a href="{{route('educacion')}}"><li class="{{request()->routeIs('educacion') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Educación</li></a>
         <a href="{{route('experiencia')}}"><li class="{{request()->routeIs('experiencia') ? 'seleccionado':'item-nav'}}" id="item-menu-desplegable">Experiencia</li></a>
