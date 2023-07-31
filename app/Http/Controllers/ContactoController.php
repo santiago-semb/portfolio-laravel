@@ -21,9 +21,6 @@ class ContactoController extends Controller
             'mensajeEmisor' => 'required|min:10',
         ]);
 
-        $correo = new ContactoMailable($request);
-        Mail::to('santiagosemb@gmail.com')->send($correo);
-
         return redirect()->route('contacto')->with('info', 'Mensaje enviado.');
     }
 }
