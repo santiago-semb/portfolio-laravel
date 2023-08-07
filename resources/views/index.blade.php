@@ -32,7 +32,7 @@
 
         .contenido-principal {
             width: 90%;
-            min-height: 500px;
+            min-height: 510px;
             border: 1px solid #ccc;
             border-radius: 0.2em;
             margin: 0 auto;
