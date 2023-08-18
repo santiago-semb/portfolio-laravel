@@ -41,7 +41,7 @@
 <div id="contenido-inicio">
 
     <div class="alert alert-dark" role="alert" style="width: 95%; margin: 0 auto; margin-top:10px;">
-        <b style="color: red; margin-right: 5px;">¡¡ATENCION!!</b><span style="color: green;">En la mayoría de los proyectos utilize un hosting gratuito, por lo que la información puede tardar unos minutos en cargar...</span>
+        <b style="color: red; margin-right: 5px;">¡¡ATENCION!!</b><span style="color: green;">La información en los proyectos puede tardar unos minutos en cargar...</span>
       </div>
 
     <div class="contenido-principal" style="overflow: auto">
